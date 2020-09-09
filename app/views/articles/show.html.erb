@@ -1,0 +1,5 @@
+<%= 'show article'%>
+<p><%= @article.title %></p>
+<p><%= @article.description %></p>
+<%= link_to 'edit', edit_article_path %>
+<%= link_to 'destroy', article_path, method: :delete, data: { confirm: 'Are you sure?' } %>
