@@ -39,6 +39,6 @@ before_action :authenticate_user!
   end
 
   def article_params
-    params.require(:article).permit(:title, :description, :user_id)
+    params.require(:article).permit(:title, :description, :status, :user_id)
   end
 end
