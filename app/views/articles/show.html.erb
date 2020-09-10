@@ -1,5 +1,7 @@
-<%= 'show article'%>
+<h4>show article</h4>
 <p><%= @article.title %></p>
 <p><%= @article.description %></p>
-<%= link_to 'edit', edit_article_path %>
-<%= link_to 'destroy', article_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% if current_user.admin? %>
+  <%= link_to 'edit', edit_article_path %>
+  <%= link_to 'destroy', article_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
