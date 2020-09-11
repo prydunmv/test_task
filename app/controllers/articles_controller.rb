@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 before_action :article, only: %i[show edit update destroy]
-before_action :authenticate_user!
 before_action :check_user_admin, only: %i[create edit update destroy]
+before_action :authenticate_user!
 
 layout 'dashboard'
 
