@@ -15,6 +15,7 @@ layout 'dashboard'
 
   def create
     @article = Article.new(article_params)
+    UniqueKey.new(@article).call
     if article.save
       redirect_to articles_path
     else

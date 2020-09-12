@@ -1,5 +1,6 @@
-<h2>Pages#home</h2>
-
+<% if current_user.signed_user? %>
+  <%= link_to 'articles', articles_path, class: 'btn btn-primary'%>
+<% end %>
 <h3> published arrticles </h3>
 <div class="row">
   <% @articles.each do |article| %>

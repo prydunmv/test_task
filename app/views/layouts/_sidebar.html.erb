@@ -6,13 +6,14 @@
           <li class="nav-item">
             <a class="nav-link active" href="#">
               <span data-feather="home"></span>
-              Dashboard <span class="sr-only">(current)</span>
+              <span class="sr-only">(current)</span>
+              <%= link_to 'Articles', articles_path %>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="file"></span>
-              <%= link_to 'new article', new_article_path %>
+              <%= link_to 'New article', new_article_path %>
             </a>
           </li>
         </ul>
