@@ -1,6 +1,9 @@
 class ArticlesController < ApplicationController
 before_action :article, only: %i[show edit update destroy]
+before_action :check_user_admin, only: %i[create edit update destroy]
 before_action :authenticate_user!
+
+layout 'dashboard'
 
   def index
     @articles = Article.all
@@ -40,5 +43,9 @@ before_action :authenticate_user!
 
   def article_params
     params.require(:article).permit(:title, :description, :status, :user_id)
+  end
+
+  def check_user_admin
+    redirect_to pages_home_path unless current_user.admin?
   end
 end

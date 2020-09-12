@@ -11,13 +11,16 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
 
-    <div class="col-md-12 text-center">
-      <div class="container">
-        <div class="card bg-info m-2">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+    <%= render 'layouts/header' %>
+    <div class="row ">
+      <%= render 'layouts/sidebar' %>
+      <div class="col-md-8">
+        <div class="container">
+          <div class="m-3">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+          </div>
           <%= yield %>
         </div>
       </div>

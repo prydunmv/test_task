@@ -1,13 +1,17 @@
-<h3>arrticles</h3>
-  <% @articles.each do |article| %>
-  <table>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.description %></td>
-      <td><%= article.status %></td>
-      <td><%= link_to 'show', article_path(article) %></td>
-    </tr>
-  </table>
-  <% end %>
+<h3>All arrticles</h3>
+<% if current_user.admin? %>
   <p><%= link_to 'new article', new_article_path %></p>
-
+  <% end %>
+<div class="row">
+  <% @articles.each do |article| %>
+    <div class="card m-3 mx-2" style="width: 18rem;">
+      <img src="/assets/news.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= article.title %></h5>
+        <p class="card-text"><%= article.description %></p>
+        <p class="card-text"><%= article.status %></p>
+        <%= link_to 'show', article_path(article), class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>
