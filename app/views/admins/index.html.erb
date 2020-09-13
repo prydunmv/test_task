@@ -1,0 +1,12 @@
+<h1>Users</h1>
+  <% @users.each do |user| %>
+  <div class="card m-2 p-3"
+    <tr>
+      <h5 class="card-title"><%= user.email %></h5>
+      <span class="card-text"><%= user.role %></span>
+      <%= link_to 'edit', edit_admin_path(user) %>
+      <%= link_to 'destroy', admin_path(user), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </tr>
+  </div>
+  <% end %>
+

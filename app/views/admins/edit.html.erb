@@ -1,0 +1,15 @@
+<h1>edit role</h1>
+<div class="card p-3 m-3 ">
+  <%= form_with model: @admin do |form| %>
+    <div class="form-group">
+      <%= form.label :role %>
+      <%= form.text_field :role, class: 'form-control' %>
+    </div>
+
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
+    <div class="form-group">
+      <%= form.submit class: 'btn btn-primary m-3'%>
+    </div>
+  <% end %>
+</div>
