@@ -11,8 +11,18 @@
     </div>
     <%= form.select :status, Article.statuses.keys, class: 'form-control' %>
 
-    <%= form.hidden_field :user_id, value: current_user.id %>
 
+    <div class="form-group">
+      <%= form.label :avatar %>
+      <%= form.file_field :avatar, class:'custom-file-upload1'%>
+    </div>
+
+    <div class="">
+      <%= form.label :body %>
+      <%= form.rich_text_area :body %>
+    </div>
+
+    <%= form.hidden_field :user_id, value: current_user.id %>
     <div class="form-group">
       <%= form.submit class: 'btn btn-primary m-3'%>
     </div>
