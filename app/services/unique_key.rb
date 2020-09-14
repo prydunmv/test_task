@@ -13,7 +13,6 @@ class UniqueKey
   def generate_key
     letters = *('A'..'Z')
     figures = *(0..9)
-      binding.pry
     begin
       unique_key = (letters.sample(3) + figures.sample(3)).join
       article.unique_key = unique_key

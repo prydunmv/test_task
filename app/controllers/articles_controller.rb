@@ -43,7 +43,7 @@ layout 'dashboard'
   end
 
   def article_params
-    params.require(:article).permit(:title, :description, :status, :user_id)
+    params.require(:article).permit(:title, :description, :status, :user_id, :body, :avatar, images: [])
   end
 
   def check_user_admin
